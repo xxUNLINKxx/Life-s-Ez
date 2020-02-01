@@ -5,69 +5,98 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     private float moveInput;
-    private int index, maxIndex;
-    private bool down, hasMoved;
+    private int index,maxIndex;
+    private bool move, movingLeft;
     [SerializeField] private Transform[] movePos;
     [SerializeField] private Transform sprite;
+    [SerializeField] private float speedTime, startST;
     private void Start()
     {
-        maxIndex = movePos.Length;
-        hasMoved = false;
+        maxIndex = movePos.Length-1;
+        movingLeft = false;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.D)))
+        if (Input.GetKey(KeyCode.A) || (Input.GetKey(KeyCode.D)))
         {
-            down = true;
-            hasMoved = !hasMoved;
+            move = true;
         }
         else
         {
-            down = false;
+            move = false;
+            startST = 0;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        if (down)
+
+        if (move)
         {
-            if (Input.GetAxisRaw("Horizontal") > 0)
+            if (startST <= 0)
             {
-                if (index < maxIndex)
+                //move right
+                if (Input.GetAxisRaw("Horizontal") > 0)
                 {
-                    index++;
+                    if (index < maxIndex)
+                    {
+                        index++;
+                    }
+                    else
+                    {
+                        if(index == maxIndex)
+                        {
+                            index = maxIndex;
+                        }
+                        else
+                        {
+                            index = 0;
+                        }
+
+                    }
                 }
-                else
+                //move left
+                if (Input.GetAxisRaw("Horizontal") < 0)
                 {
-                    index = 0;
+                    if (index > 0)
+                    {
+                        index--;
+                    }
+                    else
+                    {
+                        if (index == 0)
+                        {
+                            index = 0;
+                        }
+                        else
+                        {
+                            index = maxIndex;
+                        }
+                    }
                 }
+                NextPos(index);
+                startST = speedTime;
             }
-            if (Input.GetAxisRaw("Horizontal") < 0)
+            else
             {
-                if (index > 0)
-                {
-                    index--;
-                }
-                else
-                {
-                    index = maxIndex;
-                }
+                startST -= Time.deltaTime;
             }
-            NextPos(index);
         }
-        Waddle();
     }
 
     void NextPos(int index)
     {
         transform.position = movePos[index].position;
+        movingLeft = !movingLeft;
+        WalkAnim();
     }
 
-    void Waddle()
+    void WalkAnim()
     {
-        if (hasMoved)
+        if (movingLeft)
         {
-            sprite.Rotate(0, 0, -10);
+            transform.localRotation = Quaternion.Euler(0, 0, -10);
         }
         else
         {
-            sprite.Rotate(0, 0, 10);
+            transform.localRotation = Quaternion.Euler(0, 0, 10);
         }
     }
 }
