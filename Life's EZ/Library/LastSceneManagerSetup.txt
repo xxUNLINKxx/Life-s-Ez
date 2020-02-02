@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Salvio/Scenes/Cube Runner.unity
+- path: Assets/Salvio/Scenes/cubeRunner/Cube Runner.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
