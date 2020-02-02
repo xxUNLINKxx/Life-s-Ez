@@ -10,6 +10,10 @@ public class Timer : MonoBehaviour
     int seconds;
     int minutes;
 
+    private void Start()
+    {
+        Animation();
+    }
     private void Update()
     {
         if (startTimer)
@@ -35,5 +39,11 @@ public class Timer : MonoBehaviour
     {
         string t = minutes + "." + seconds+" s";
         return t;
+    }
+
+    void Animation()
+    {
+        LeanTween.rotateZ(this.gameObject, 8, 0.8f).setLoopPingPong().setEaseInOutSine();
+        LeanTween.scale(this.gameObject, new Vector2(1, 1), 0.8f).setLoopPingPong().setEaseInOutSine();
     }
 }

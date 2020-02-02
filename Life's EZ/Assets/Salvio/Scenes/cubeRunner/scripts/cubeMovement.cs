@@ -24,6 +24,7 @@ public class cubeMovement : MonoBehaviour
             if (isGrounded())
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                rb.AddTorque(0.5f, ForceMode2D.Impulse);
                 jumps = extraJumps;
             }
             else if(jumps>0)

@@ -7,7 +7,7 @@ public class GateScript : MonoBehaviour
     [SerializeField] private Transform[] pos;
     [SerializeField] private GameObject[] Levels;
     [SerializeField] private int posIndex, maxIndex;
-    [SerializeField] private GameObject Player, Panel;
+    [SerializeField] private GameObject Player, Panel, Exit;
     [SerializeField] private Timer GetTimer;
     private bool hasEntered, hasWon;
 
@@ -39,6 +39,7 @@ public class GateScript : MonoBehaviour
     private void Update()
     {
         Win();
+        ExitGame();
         if (!hasWon)
         {
             Lose();    
@@ -73,22 +74,33 @@ public class GateScript : MonoBehaviour
         Time.timeScale = 1;
         hasEntered = false;
     }
-
+    
+    bool lose = false;
     void Lose()
     {
-        bool lose;
+
         if (Player.transform.position.y <= -7)
         {
-            Panel.SetActive(true);
-            lose = true;
+            if (posIndex <= 0)
+            {
+                Exit.SetActive(true);
+            }
+            else
+            {
+                Panel.SetActive(true);
+                lose = true;
+            }
+            StopGame();
+
         }
         else
         {
             Panel.SetActive(false);
+            Exit.SetActive(false);
             lose = false;
         }
 
-        if (lose&&Input.GetKeyDown(KeyCode.Space))
+        if (lose &&Input.GetKeyDown(KeyCode.Space))
         {
             ResetGame();
         }
@@ -127,5 +139,22 @@ public class GateScript : MonoBehaviour
     void StopGame()
     {
         GetTimer.startTimer = false;
+    }
+
+    void ExitGame()
+    {
+        if (Exit.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ResetGame();
+            }
+            //escape
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                //exitCode
+                ResetGame();//for now
+            }
+        }
     }
 }
