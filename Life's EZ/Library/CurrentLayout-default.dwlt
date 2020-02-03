@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 494}
   m_MaxSize: {x: 18004, y: 14044}
   vertical: 0
-  controlID: 12861
+  controlID: 14342
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 434, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 1
-  controlID: 12862
+  controlID: 14343
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 222}
   m_MaxSize: {x: 8002, y: 4022}
   vertical: 0
-  controlID: 12863
+  controlID: 14344
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 434, y: 272}
   m_MaxSize: {x: 14004, y: 10022}
   vertical: 0
-  controlID: 12993
+  controlID: 14322
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -441,9 +441,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.024896324, y: -1.233551, z: -2.710543}
+    m_Target: {x: 1.7934308, y: 2.1806183, z: 70.644554}
     speed: 2
-    m_Value: {x: -0.024896324, y: -1.233551, z: -2.710543}
+    m_Value: {x: 2.0109117, y: 2.054642, z: 68.35072}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -476,9 +476,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.254775
+    m_Target: 8.693189
     speed: 2
-    m_Value: 8.254775
+    m_Value: 8.318841
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -640,9 +640,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 26310000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0451ffff72fbffffb03300000e34000032340000
+      m_SelectedIDs: 04b1ffff
+      m_LastClickedID: -20220
+      m_ExpandedIDs: 8eb1ffff90b1ffff32b4ffff46b5ffff32b9ffffd8d9ffffdadafffff8f9ffff72fbfffff4ffffff82350000eea80000c0a90000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -32320
+  m_LastSelectedObjectID: -19448
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -760,20 +760,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Salvio/Scenes/Main
+    - Assets/Barilea/Scripts/Data
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Salvio/Scenes/Main
+  - Assets/Barilea/Scripts/Data
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Windows 10\Documents\GAMEDEV\Life-s-Ez\Life's EZ
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 142f0000
-    m_LastClickedID: 12052
-    m_ExpandedIDs: 00000000562d0000ea2d0000702f000000ca9a3b
+    m_SelectedIDs: 80390000
+    m_LastClickedID: 14720
+    m_ExpandedIDs: 00000000582d0000ec2d0000722f0000763900007c39000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -801,7 +801,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000562d0000ea2d0000702f00002c30000000ca9a3b
+    m_ExpandedIDs: 00000000582d0000ec2d0000722f0000763900007c39000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -845,7 +845,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 13}
+      m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0

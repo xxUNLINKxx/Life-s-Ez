@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GateScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GateScript : MonoBehaviour
     [SerializeField] private GameObject Player, Panel, Exit;
     [SerializeField] private Timer GetTimer;
     private bool hasEntered, hasWon;
+    private SceneTransition sceneTransition;
 
     void setActiveLevel()
     {
@@ -30,6 +32,7 @@ public class GateScript : MonoBehaviour
         maxIndex = pos.Length;
         hasEntered = false;
         setActiveLevel();
+        sceneTransition = GameObject.Find("sceneTransitionCanvas").GetComponent<SceneTransition>();
     }
 
     private void FixedUpdate()
@@ -153,8 +156,17 @@ public class GateScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 //exitCode
-                ResetGame();//for now
+                StartCoroutine(back2Menu());
             }
         }
+    }
+
+    IEnumerator back2Menu()
+    {
+        sceneTransition.StartCoroutine(sceneTransition.ExitScene(2f));
+        yield return new WaitForSeconds(2f);
+        sceneTransition.StartCoroutine(sceneTransition.EnterScene());
+        SceneManager.LoadScene("Main");
+        
     }
 }

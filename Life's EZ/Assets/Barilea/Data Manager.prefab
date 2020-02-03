@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &970452568179648995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970452568179648996}
+  - component: {fileID: 970452568179648997}
+  m_Layer: 0
+  m_Name: Data Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970452568179648996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970452568179648995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970452568179648997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970452568179648995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d70d16f1f07cb24eb05ce3498364101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSceneNames:
+  - Cube Runner
+  - Scene2
+  - Scene3
+  - Scene4
+  - Scene5
+  - Scene6
+  - Scene7
+  - Scene8
+  - Scene9
+  gameNames:
+  - Cube Runner
+  - Pok Men Go
+  - Floppy Dood
+  - O Thereo
+  - Cheers!
+  - Crash Of Cans
+  - Leg Of Legions
+  - Mooman Legends
+  - Rood Shoodu Loowgens
+  toRemove: 
+  choices: 
+  gamesLeft: 
+  gameNumber: 000000000100000002000000030000000400000005000000060000000700000008000000
+  currentGames: 
+  currentNum: 0
+  chosenNum: 0
+  day: 0
+  gameHasBeenPlayed: 000000
+  enableControlPanel: 1
+  controlPanelButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gameButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  textBoxes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sceneTransition: {fileID: 0}

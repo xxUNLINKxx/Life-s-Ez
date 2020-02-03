@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     private float moveInput;
     private int index,maxIndex;
-    private bool move, movingLeft;
+    private bool move, movingLeft,hasPressed;
     [SerializeField] private Transform[] movePos;
     [SerializeField] private Transform sprite;
     [SerializeField] private float speedTime, startST;
@@ -79,6 +79,7 @@ public class PlayerScript : MonoBehaviour
                 startST -= Time.deltaTime;
             }
         }
+        ActivateCom();
     }
 
     void NextPos(int index)
@@ -97,6 +98,17 @@ public class PlayerScript : MonoBehaviour
         else
         {
             transform.localRotation = Quaternion.Euler(0, 0, 10);
+        }
+    }
+
+    void ActivateCom()
+    {
+        if(index <= 0)
+        {
+            if (!hasPressed && Input.GetKeyDown(KeyCode.E))
+            {
+                GameObject.Find("Data Manager").GetComponent<GameSelectionDataManager>().GenerateGames();
+            }
         }
     }
 }
