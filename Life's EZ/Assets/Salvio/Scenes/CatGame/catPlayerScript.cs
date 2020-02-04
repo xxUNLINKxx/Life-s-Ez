@@ -29,6 +29,10 @@ public class catPlayerScript : MonoBehaviour
         {
             rb.velocity = new Vector2(moveInput * speed, 0);
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
         pointsText.text = points.ToString();
 
         if (Distance() < attackRadius)
@@ -46,6 +50,7 @@ public class catPlayerScript : MonoBehaviour
     }
     void Bounce(Rigidbody2D ball, int rand)
     {
+        ball.velocity = Vector2.zero;
         ball.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
         if (rand > 0)
         {

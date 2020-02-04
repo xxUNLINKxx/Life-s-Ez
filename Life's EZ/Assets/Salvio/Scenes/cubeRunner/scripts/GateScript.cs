@@ -71,10 +71,12 @@ public class GateScript : MonoBehaviour
     IEnumerator LoadLevel(float delay)
     {
         Time.timeScale = 0;
+        GetTimer.startTimer = false;
         yield return new WaitForSecondsRealtime(delay);
         setActiveLevel();
         yield return new WaitForSecondsRealtime(delay);
         Time.timeScale = 1;
+        GetTimer.startTimer = true;
         hasEntered = false;
     }
     

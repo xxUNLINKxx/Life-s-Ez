@@ -27,7 +27,7 @@ public class cubeMovement : MonoBehaviour
                 rb.AddTorque(0.5f, ForceMode2D.Impulse);
                 jumps = extraJumps;
             }
-            else if(jumps>0)
+            else if(jumps>0 && rb.velocity.y<=0)
             {
                 jumps -= 1;
                 rb.AddForce(Vector2.up * jumpForce*jumpMultiplier(), ForceMode2D.Impulse);
