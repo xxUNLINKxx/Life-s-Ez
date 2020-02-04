@@ -8,19 +8,41 @@ using UnityEngine.UI;
 public class catPlayerScript : MonoBehaviour
 {
     private float moveInput;
-    [SerializeField] private float speed, bounceSpeed, points;
+    [SerializeField] private float speed, bounceSpeed, points, attackRadius;
     [SerializeField] public bool canMove;
     [SerializeField] private Text pointsText;
+    [SerializeField] private Animator catArm, platform;
 
     private void Update()
     {
         moveInput = Input.GetAxis("Horizontal");
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (Mathf.Abs(rb.velocity.x)> 0.1)
+        {
+            platform.SetBool("walk", true);
+        }
+        else
+        {
+            platform.SetBool("walk", false);
+        }
         if (canMove)
         {
             rb.velocity = new Vector2(moveInput * speed, 0);
         }
         pointsText.text = points.ToString();
+
+        if (Distance() < attackRadius)
+        {
+            catArm.SetTrigger("attack");
+        }
+    }
+
+    float Distance()
+    {
+        Transform ball = GameObject.FindGameObjectWithTag("Ball").transform;
+
+        float d = Vector2.Distance(ball.position, transform.position);
+        return d;
     }
     void Bounce(Rigidbody2D ball, int rand)
     {

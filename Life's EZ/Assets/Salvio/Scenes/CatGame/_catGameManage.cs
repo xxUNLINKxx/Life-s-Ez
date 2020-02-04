@@ -8,6 +8,7 @@ public class _catGameManage : MonoBehaviour
     private bool hasPressed = false,hasLost=false;
     private SceneTransition sceneTransition;
     catPlayerScript player;
+    [SerializeField] private GameObject Ball;
 
 
     private void Start()
@@ -22,6 +23,11 @@ public class _catGameManage : MonoBehaviour
         if (!player.canMove&&Input.GetKeyDown(KeyCode.Space))
         {
             player.canMove = true;
+            Ball.SetActive(true);
+        }
+        if(!player.canMove)
+        {
+            Ball.SetActive(false);
         }
         if (hasLost)
         {
