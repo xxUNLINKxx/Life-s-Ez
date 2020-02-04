@@ -359,6 +359,7 @@ MonoBehaviour:
   sprite: {fileID: 2068436068}
   speedTime: 0.5
   startST: 0
+  menu: {fileID: 1546130118}
 --- !u!50 &122945255
 Rigidbody2D:
   serializedVersion: 4
@@ -787,15 +788,45 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetFile
       objectReference: {fileID: 0}
+    - target: {fileID: 4284605108852050852, guid: 566f6de1aeaf3894c95984f5d20660c6,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284605108852050852, guid: 566f6de1aeaf3894c95984f5d20660c6,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284605108852050852, guid: 566f6de1aeaf3894c95984f5d20660c6,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284605108852050852, guid: 566f6de1aeaf3894c95984f5d20660c6,
+        type: 3}
+      propertyPath: m_Text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4284605108852050853, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 343
+      value: 326
       objectReference: {fileID: 0}
     - target: {fileID: 4284605108852050853, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 402
+      value: -299.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284605108852050853, guid: 566f6de1aeaf3894c95984f5d20660c6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284605108852050853, guid: 566f6de1aeaf3894c95984f5d20660c6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4284605108852050854, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
@@ -855,7 +886,7 @@ PrefabInstance:
     - target: {fileID: 4284605109439958543, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4284605109439958543, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
@@ -1425,6 +1456,12 @@ Transform:
   m_Father: {fileID: 2091061423}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1546130118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4284605107720342290, guid: 566f6de1aeaf3894c95984f5d20660c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 711329160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1791383092 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4284605107786067747, guid: 566f6de1aeaf3894c95984f5d20660c6,

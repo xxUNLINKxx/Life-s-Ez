@@ -21,7 +21,6 @@ public class SceneTransition : MonoBehaviour
     }
     
     public GameObject scenetransition;
-    private bool hasPressed;
     public IEnumerator ExitScene(float delay)
     {
         LeanTween.scaleY(scenetransition, 0.1f, 1.2f).setEaseOutSine();
@@ -37,6 +36,5 @@ public class SceneTransition : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         LeanTween.moveLocalY(scenetransition, -1000, 0.8f).setEaseInSine().setEaseInBack();
         LeanTween.scaleY(scenetransition, 1f, 1f).setEaseInSine();
-        hasPressed = false;
     }
 }

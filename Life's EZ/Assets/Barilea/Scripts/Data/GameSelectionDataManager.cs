@@ -109,7 +109,7 @@ public class GameSelectionDataManager : MonoBehaviour
                 textBoxes[1].GetComponent<Text>().text = gameNames[currentGames[0]];
                 textBoxes[2].GetComponent<Text>().text = "No More Games";
                 textBoxes[3].GetComponent<Text>().text = "No More Games";
-                textBoxes[0].GetComponent<Text>().text = "Day " + day;
+                textBoxes[0].GetComponent<Text>().text = day.ToString();
             }
             else if (gamesLeft.Length == 2)
             {
@@ -120,7 +120,7 @@ public class GameSelectionDataManager : MonoBehaviour
                 textBoxes[1].GetComponent<Text>().text = gameNames[currentGames[0]];
                 textBoxes[2].GetComponent<Text>().text = gameNames[currentGames[1]];
                 textBoxes[3].GetComponent<Text>().text = "No More Games";
-                textBoxes[0].GetComponent<Text>().text = "Day " + day;
+                textBoxes[0].GetComponent<Text>().text = day.ToString();
 
             }
             else
@@ -133,7 +133,7 @@ public class GameSelectionDataManager : MonoBehaviour
                 textBoxes[1].GetComponent<Text>().text = gameNames[currentGames[0]];
                 textBoxes[2].GetComponent<Text>().text = gameNames[currentGames[1]];
                 textBoxes[2].GetComponent<Text>().text = gameNames[currentGames[2]];
-                textBoxes[0].GetComponent<Text>().text = "Day " + day;
+                textBoxes[0].GetComponent<Text>().text = day.ToString();
 
             }
             gamesLeft = new int[0];
@@ -171,7 +171,7 @@ public class GameSelectionDataManager : MonoBehaviour
             textBoxes[1].GetComponent<Text>().text = gameNames[currentGames[0]];
             textBoxes[2].GetComponent<Text>().text = gameNames[currentGames[1]];
             textBoxes[2].GetComponent<Text>().text = gameNames[currentGames[2]];
-            textBoxes[0].GetComponent<Text>().text = "Day " + day;
+            textBoxes[0].GetComponent<Text>().text = day.ToString();
             SaveFile();
             LoadFile();
         }
@@ -238,7 +238,7 @@ public class GameSelectionDataManager : MonoBehaviour
         textBoxes[1].GetComponent<Text>().text = (currentGames.Length>0 ? gameNames[currentGames[0]] : "No Game Selected");
         textBoxes[2].GetComponent<Text>().text = (currentGames.Length > 1 ? gameNames[currentGames[1]] : "No Game Selected");
         textBoxes[3].GetComponent<Text>().text = (currentGames.Length > 2 ? gameNames[currentGames[2]] : "No Game Selected");
-        textBoxes[0].GetComponent<Text>().text = "Day " + day;
+        textBoxes[0].GetComponent<Text>().text = day.ToString();
         for(int i=1;i<=currentGames.Length;i++)
         {
             if (gameHasBeenPlayed[i - 1] == true)
