@@ -166,7 +166,6 @@ public class GateScript : MonoBehaviour
         sceneTransition.StartCoroutine(sceneTransition.ExitScene(2f));
         yield return new WaitForSeconds(2f);
         sceneTransition.StartCoroutine(sceneTransition.EnterScene());
-        SceneManager.LoadScene("Main");
-        
+        SceneManager.LoadScene("Main");        
     }
 }

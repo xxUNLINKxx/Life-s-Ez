@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSceneNames:
   - Cube Runner
-  - Scene2
+  - CatGame
   - Scene3
   - Scene4
   - Scene5
@@ -55,7 +55,7 @@ MonoBehaviour:
   - Scene9
   gameNames:
   - Cube Runner
-  - Pok Men Go
+  - CatGame
   - Floppy Dood
   - O Thereo
   - Cheers!
@@ -88,4 +88,3 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  sceneTransition: {fileID: 0}

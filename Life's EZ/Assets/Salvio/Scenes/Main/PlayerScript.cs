@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerScript : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform[] movePos;
     [SerializeField] private Transform sprite;
     [SerializeField] private float speedTime, startST;
+    GameSelectionDataManager gData;
+    SceneTransition sceneTransition; 
     private void Start()
     {
         maxIndex = movePos.Length-1;
         movingLeft = false;
+        gData = GameObject.Find("Data Manager").GetComponent<GameSelectionDataManager>();
+        sceneTransition = GameObject.Find("sceneTransitionCanvas").GetComponent<SceneTransition>();
     }
     void Update()
     {
@@ -105,11 +110,29 @@ public class PlayerScript : MonoBehaviour
     {
         if(index <= 0)
         {
-            if (!hasPressed && Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                GameObject.Find("Data Manager").GetComponent<GameSelectionDataManager>().GenerateGames();
+                
             }
         }
+
+        if(index >= 6)
+        {
+            if (gData.canBePressed() && Input.GetKeyDown(KeyCode.E))
+            {                          
+                NextDay();
+                gData.GenerateGames();
+            }
+        }
+    }
+
+    IEnumerator NextDay()
+    {
+        
+        sceneTransition.StartCoroutine(sceneTransition.ExitScene(2f));
+        yield return new WaitForSeconds(2f);
+        sceneTransition.StartCoroutine(sceneTransition.EnterScene());
+        SceneManager.LoadScene("Main");
     }
 }
 

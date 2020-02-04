@@ -33,6 +33,10 @@ public class GameSelectionDataManager : MonoBehaviour
         LoadFile();
         ToggleControlPanel();
         sceneTransition = GameObject.Find("sceneTransitionCanvas").GetComponent<SceneTransition>();
+        if(gamesLeft == gameNumber)
+        {
+            GenerateGames();
+        }
     }
     public void ResetFile()
     {
@@ -285,6 +289,32 @@ public class GameSelectionDataManager : MonoBehaviour
                 gameButtons[0].GetComponent<Button>().interactable = true;
                 break;
         }
+    }
+
+    public bool canBePressed()
+    {
+        switch (currentGames.Length)
+        {
+            default:
+                Debug.Log("This should be impossible. This literally cant happen. Contact me immediately if this occurs - Nicholas");
+                break;
+            case 0:
+                break;
+            case 1:
+                if (!gameHasBeenPlayed[0]) return false;
+                break;
+            case 2:
+                if (!gameHasBeenPlayed[0]) return false;
+                if (!gameHasBeenPlayed[1]) return false;
+                break;
+            case 3:
+                if (!gameHasBeenPlayed[0]) return false;
+                if (!gameHasBeenPlayed[1]) return false;
+                if (!gameHasBeenPlayed[2]) return false;
+                break;
+        }
+        return true;
+
     }
 
 }

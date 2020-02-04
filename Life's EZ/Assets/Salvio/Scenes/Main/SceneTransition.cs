@@ -22,12 +22,6 @@ public class SceneTransition : MonoBehaviour
     
     public GameObject scenetransition;
     private bool hasPressed;
-    private void Update()
-    {
-     
-
-    }
-
     public IEnumerator ExitScene(float delay)
     {
         LeanTween.scaleY(scenetransition, 0.1f, 1.2f).setEaseOutSine();

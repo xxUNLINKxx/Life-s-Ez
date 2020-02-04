@@ -356,7 +356,7 @@ MonoBehaviour:
   - {fileID: 422130277}
   - {fileID: 1356079038}
   - {fileID: 718322391}
-  sprite: {fileID: 2068436067}
+  sprite: {fileID: 2068436068}
   speedTime: 0.5
   startST: 0
 --- !u!50 &122945255
@@ -1016,18 +1016,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 711329160}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &973897112 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2888575955234091436, guid: dfd42b9bff936604f985a3d80ea67f63,
-    type: 3}
-  m_PrefabInstance: {fileID: 2888575955066555444}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4d7eaaf143dac40868ea2130710d60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &988822127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1155,11 +1143,6 @@ PrefabInstance:
       propertyPath: textBoxes.Array.data[3]
       value: 
       objectReference: {fileID: 1336165345}
-    - target: {fileID: 970452568179648997, guid: 8521c0760bedd2f4aa1e332af81c872c,
-        type: 3}
-      propertyPath: sceneTransition
-      value: 
-      objectReference: {fileID: 973897112}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8521c0760bedd2f4aa1e332af81c872c, type: 3}
 --- !u!1 &1066943490 stripped
