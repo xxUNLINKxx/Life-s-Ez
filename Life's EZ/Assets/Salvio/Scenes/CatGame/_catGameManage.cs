@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class _catGameManage : MonoBehaviour
@@ -8,7 +9,8 @@ public class _catGameManage : MonoBehaviour
     private bool hasPressed = false,hasLost=false;
     private SceneTransition sceneTransition;
     catPlayerScript player;
-    [SerializeField] private GameObject Ball;
+    [SerializeField] private GameObject Ball,startPanel, losePanel;
+    [SerializeField] private Text finalScore;
 
 
     private void Start()
@@ -22,8 +24,7 @@ public class _catGameManage : MonoBehaviour
     {
         if (!player.canMove&&Input.GetKeyDown(KeyCode.Space))
         {
-            player.canMove = true;
-            Ball.SetActive(true);
+            StartCoroutine(StartGame());
         }
         if(!player.canMove)
         {
@@ -31,7 +32,9 @@ public class _catGameManage : MonoBehaviour
         }
         if (hasLost)
         {
-            if (Input.GetKeyDown(KeyCode.Space)&&!hasPressed)
+            finalScore.text = "ur score: " + player.points;
+            StartCoroutine(LoseGame());
+            if (Input.GetKeyDown(KeyCode.Space)&& !hasPressed)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 hasPressed = true;
@@ -44,11 +47,25 @@ public class _catGameManage : MonoBehaviour
         }
 
     }
+
+    IEnumerator StartGame()
+    {
+        player.canMove = true;
+        LeanTween.scale(startPanel, new Vector2(0,0), 0.5f).setEaseInBounce().setEaseLinear();
+        yield return new WaitForSeconds(1.8f);       
+        Ball.SetActive(true);
+    }
+
+    IEnumerator LoseGame()
+    {
+        yield return new WaitForSeconds(1f);
+        LeanTween.scale(losePanel, new Vector2(1, 1), 0.5f).setEaseInBounce().setEaseLinear();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("Ball"))
         {
-            GameObject.Find("Player").GetComponent<catPlayerScript>().canMove = false;
+            player.canMove = false;
             hasLost = true;
         }
     }
@@ -59,6 +76,5 @@ public class _catGameManage : MonoBehaviour
         yield return new WaitForSeconds(2f);
         sceneTransition.StartCoroutine(sceneTransition.EnterScene());
         SceneManager.LoadScene("Main");
-
     }
 }

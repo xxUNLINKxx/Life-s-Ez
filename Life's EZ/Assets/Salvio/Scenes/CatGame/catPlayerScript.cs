@@ -8,10 +8,16 @@ using UnityEngine.UI;
 public class catPlayerScript : MonoBehaviour
 {
     private float moveInput;
-    [SerializeField] private float speed, bounceSpeed, points, attackRadius;
+    [SerializeField] public float speed, bounceSpeed, points, attackRadius;
     [SerializeField] public bool canMove;
     [SerializeField] private Text pointsText;
     [SerializeField] private Animator catArm, platform;
+    Transform ballTransform;
+
+    private void Start()
+    {
+        ballTransform = GameObject.FindGameObjectWithTag("Ball").transform;
+    }
 
     private void Update()
     {
@@ -35,7 +41,7 @@ public class catPlayerScript : MonoBehaviour
         }
         pointsText.text = points.ToString();
 
-        if (Distance() < attackRadius)
+        if (Distance() < attackRadius && canMove)
         {
             catArm.SetTrigger("attack");
         }
@@ -43,23 +49,51 @@ public class catPlayerScript : MonoBehaviour
 
     float Distance()
     {
-        Transform ball = GameObject.FindGameObjectWithTag("Ball").transform;
-
-        float d = Vector2.Distance(ball.position, transform.position);
+        float d = Vector2.Distance(ballTransform.position, transform.position);
         return d;
+    }
+    float multiplier()
+    {
+        float m = 0;
+        if (points == 10)
+        {
+            m = 0.2f;
+        }
+        else if(points==20)
+        {
+            m = 0.3f;
+        }
+        else if (points == 30)
+        {
+            m = 0.4f;
+        }
+        else if (points == 40)
+        {
+            m = 0.2f;
+        }
+        else if (points == 50)
+        {
+            m = 0.1f;
+        }
+        else
+        {
+            m = 0;
+        }
+
+        return m;
     }
     void Bounce(Rigidbody2D ball, int rand)
     {
         ball.velocity = Vector2.zero;
-        ball.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
+        ball.AddForce(Vector2.up * (bounceSpeed+=multiplier()), ForceMode2D.Impulse);
         if (rand > 0)
         {
-            ball.AddForce(Vector2.left * 0.2f, ForceMode2D.Impulse);
+            ball.AddForce(Vector2.left * 0.35f, ForceMode2D.Impulse);
             ball.AddTorque(1f, ForceMode2D.Impulse);
         }
         else
         {
-            ball.AddForce(-Vector2.left * 0.2f, ForceMode2D.Impulse);
+            ball.AddForce(-Vector2.left * 0.35f, ForceMode2D.Impulse);
             ball.AddTorque(-1f, ForceMode2D.Impulse);
         }
         if (canMove)
