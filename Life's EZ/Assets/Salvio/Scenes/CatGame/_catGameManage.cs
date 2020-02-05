@@ -22,6 +22,11 @@ public class _catGameManage : MonoBehaviour
 
     private void Update()
     {
+        if(!player.canMove && !hasPressed && Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(back2Menu());
+            hasPressed = true;
+        }
         if (!player.canMove&&Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(StartGame());
