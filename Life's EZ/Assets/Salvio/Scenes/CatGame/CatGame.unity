@@ -320,6 +320,7 @@ MonoBehaviour:
   Ball: {fileID: 1104337670}
   startPanel: {fileID: 1422381106}
   losePanel: {fileID: 1475845431}
+  ad: {fileID: 1498318524}
   finalScore: {fileID: 1522207434}
 --- !u!1 &92032482
 GameObject:
@@ -730,17 +731,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151290070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 207704158}
-  m_Father: {fileID: 738038102}
-  m_RootOrder: 2
+  m_Father: {fileID: 1498318525}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240, y: 0}
+  m_AnchoredPosition: {x: 480, y: 0}
   m_SizeDelta: {x: 349.8, y: 353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151290072
@@ -1916,7 +1917,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -54944883
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &738038102
@@ -1932,7 +1933,6 @@ RectTransform:
   m_Children:
   - {fileID: 1557600646}
   - {fileID: 1498318525}
-  - {fileID: 151290071}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2423,7 +2423,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 844f69379349bf049aa069979f104ba3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3077721fb7d48ff4c8bca48b2c2c0518, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2443,7 +2443,7 @@ Transform:
   m_GameObject: {fileID: 1104337670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2463,7 +2463,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.17699
+  m_Radius: 0.3382717
 --- !u!50 &1104337674
 Rigidbody2D:
   serializedVersion: 4
@@ -3680,6 +3680,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 557248360}
+  - {fileID: 151290071}
   m_Father: {fileID: 738038102}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

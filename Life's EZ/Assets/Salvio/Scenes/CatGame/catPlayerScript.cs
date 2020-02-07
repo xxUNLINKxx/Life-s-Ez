@@ -89,12 +89,12 @@ public class catPlayerScript : MonoBehaviour
         if (rand > 0)
         {
             ball.AddForce(Vector2.left * 0.35f, ForceMode2D.Impulse);
-            ball.AddTorque(1f, ForceMode2D.Impulse);
+            ball.AddTorque(0.1f, ForceMode2D.Impulse);
         }
         else
         {
             ball.AddForce(-Vector2.left * 0.35f, ForceMode2D.Impulse);
-            ball.AddTorque(-1f, ForceMode2D.Impulse);
+            ball.AddTorque(-0.1f, ForceMode2D.Impulse);
         }
         if (canMove)
         {

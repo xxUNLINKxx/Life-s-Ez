@@ -9,7 +9,7 @@ public class _catGameManage : MonoBehaviour
     private bool hasPressed = false,hasLost=false;
     private SceneTransition sceneTransition;
     catPlayerScript player;
-    [SerializeField] private GameObject Ball,startPanel, losePanel;
+    [SerializeField] private GameObject Ball,startPanel, losePanel, ad;
     [SerializeField] private Text finalScore;
 
 
@@ -59,6 +59,8 @@ public class _catGameManage : MonoBehaviour
         LeanTween.scale(startPanel, new Vector2(0,0), 0.5f).setEaseInBounce().setEaseLinear();
         yield return new WaitForSeconds(1.8f);       
         Ball.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        ad.SetActive(false);
     }
 
     IEnumerator LoseGame()

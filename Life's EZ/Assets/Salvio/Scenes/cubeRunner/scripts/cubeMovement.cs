@@ -9,6 +9,7 @@ public class cubeMovement : MonoBehaviour
     [SerializeField] private int extraJumps; private int jumps;
     private Rigidbody2D rb;
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private SpriteRenderer[] jumpUi;
 
     private void Start()
     {
@@ -19,20 +20,35 @@ public class cubeMovement : MonoBehaviour
     {
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if (isGrounded())
+        {                
+            jumps = extraJumps;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isGrounded())
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 rb.AddTorque(0.5f, ForceMode2D.Impulse);
-                jumps = extraJumps;
             }
-            else if(jumps>0 && rb.velocity.y<=0)
+            else if(jumps>0 && rb.velocity.y<=0.5f)
             {
                 jumps -= 1;
                 rb.AddForce(Vector2.up * jumpForce*jumpMultiplier(), ForceMode2D.Impulse);
             }
 
+        }
+
+        for(int i = 0; i < jumpUi.Length; i++)
+        {
+            if (i < jumps)
+            {
+                jumpUi[i].color = Color.white;
+            }
+            else
+            {
+                jumpUi[i].color = Color.gray;
+            }
         }
     }
 

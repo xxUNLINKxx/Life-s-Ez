@@ -84,7 +84,7 @@ public class GateScript : MonoBehaviour
     void Lose()
     {
 
-        if (Player.transform.position.y <= -7)
+        if (Player.transform.position.y <= -10)
         {
             if (posIndex <= 0)
             {
