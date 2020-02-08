@@ -10,7 +10,7 @@ public class GateScript : MonoBehaviour
     [SerializeField] private int posIndex, maxIndex;
     [SerializeField] private GameObject Player, Panel, Exit;
     [SerializeField] private Timer GetTimer;
-    private bool hasEntered, hasWon;
+    private bool hasEntered, hasWon,hasPressed;
     private SceneTransition sceneTransition;
 
     void setActiveLevel()
@@ -155,10 +155,11 @@ public class GateScript : MonoBehaviour
                 ResetGame();
             }
             //escape
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape)&&!hasPressed)
             {
                 //exitCode
                 StartCoroutine(back2Menu());
+                hasPressed = true;
             }
         }
     }
