@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     private float moveInput;
-    private int index,maxIndex;
+    [SerializeField]private int index,maxIndex;
     private bool move, movingLeft, hasPressed, canMove = true;
     [SerializeField] private Transform[] movePos;
     [SerializeField] private Transform sprite;
@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour
         movingLeft = false;
         gData = GameObject.Find("Data Manager").GetComponent<GameSelectionDataManager>();
         sceneTransition = GameObject.Find("sceneTransitionCanvas").GetComponent<SceneTransition>();
+        menu.SetActive(false);
     }
     void Update()
     {
