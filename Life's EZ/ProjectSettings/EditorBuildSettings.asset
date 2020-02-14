@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Salvio/Scenes/CatGame/CatGame.unity
     guid: 0df2b544d647d8a4cb84857267121789
+  - enabled: 1
+    path: Assets/Salvio/Scenes/HauntedRoom/room.1.unity
+    guid: ca7f3e23f4f0f944583059aecc67a46d
+  - enabled: 1
+    path: Assets/Salvio/Scenes/HauntedRoom/room.2.unity
+    guid: 7bb29ad29cda54342a2e98a4314c7d43
   m_configObjects: {}
