@@ -6,11 +6,45 @@ public class object_Traverse : MonoBehaviour
 {
 
     [SerializeField] private Vector2[] limits;
+    [SerializeField] private float maxVelocity;
+    private Rigidbody2D rb;
+    [SerializeField] public bool canPick;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Update()
     {
         traverse();
+
+        if (rb.velocity.y > maxVelocity)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, maxVelocity);
+        }
+        if (rb.velocity.y < -maxVelocity)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -maxVelocity);
+        }
+        if (rb.velocity.x > maxVelocity)
+        {
+            rb.velocity = new Vector2(maxVelocity, rb.velocity.y);
+        }
+        if (rb.velocity.x < -maxVelocity)
+        {
+            rb.velocity = new Vector2(-maxVelocity, rb.velocity.y);
+        }
+
+        if(Mathf.Abs(rb.velocity.x)>= maxVelocity|| Mathf.Abs(rb.velocity.y) >= maxVelocity)
+        {
+            canPick = false;
+        }
+        else
+        {
+            canPick = true;
+        }
     }
+
     void traverse()
     {
         Vector2 lr = limits[0];

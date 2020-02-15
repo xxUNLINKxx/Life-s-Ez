@@ -22,5 +22,17 @@ EditorBuildSettings:
     guid: ca7f3e23f4f0f944583059aecc67a46d
   - enabled: 1
     path: Assets/Salvio/Scenes/HauntedRoom/room.2.unity
-    guid: 7bb29ad29cda54342a2e98a4314c7d43
+    guid: d7d2bddaf0c0ef34286f9a87ac0d9415
+  - enabled: 1
+    path: Assets/Salvio/Scenes/HauntedRoom/room.3.unity
+    guid: db15238ad3754e54f84571bdfc21bce2
+  - enabled: 1
+    path: Assets/Salvio/Scenes/HauntedRoom/room.4.unity
+    guid: 39a0d27dcd695cd4e9a7896b83bf8223
+  - enabled: 1
+    path: Assets/Salvio/Scenes/HauntedRoom/room.5.unity
+    guid: 8bcbaa486407afb4ca7b0a42bfb32a9d
+  - enabled: 1
+    path: Assets/Salvio/Scenes/HauntedRoom/room.6.unity
+    guid: cd5a5a47ecd7dbb4ab084a5a58155433
   m_configObjects: {}
