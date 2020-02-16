@@ -21,6 +21,7 @@ public class object_Traverse : MonoBehaviour
         if (rb.velocity.y > maxVelocity)
         {
             rb.velocity = new Vector2(rb.velocity.x, maxVelocity);
+            rb.AddForce(Vector2.up * 2, ForceMode2D.Impulse);
         }
         if (rb.velocity.y < -maxVelocity)
         {
@@ -29,13 +30,15 @@ public class object_Traverse : MonoBehaviour
         if (rb.velocity.x > maxVelocity)
         {
             rb.velocity = new Vector2(maxVelocity, rb.velocity.y);
+            rb.AddForce(Vector2.right * 2, ForceMode2D.Impulse);
         }
         if (rb.velocity.x < -maxVelocity)
         {
             rb.velocity = new Vector2(-maxVelocity, rb.velocity.y);
+            rb.AddForce(-Vector2.right * 2, ForceMode2D.Impulse);
         }
 
-        if(Mathf.Abs(rb.velocity.x)>= maxVelocity|| Mathf.Abs(rb.velocity.y) >= maxVelocity)
+        if(Mathf.Abs(rb.velocity.x)>= 1|| Mathf.Abs(rb.velocity.y) >= 1)
         {
             canPick = false;
         }

@@ -141,7 +141,7 @@ MonoBehaviour:
   moveInput: 0
   speed: 3
   jumpForce: 2.2
-  pushForce: 3.5
+  pushForce: 4
   groundCheckRadius: 0.1
   grabRadius: 0.25
   maxVelocity: 10

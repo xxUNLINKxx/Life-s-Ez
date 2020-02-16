@@ -103,6 +103,7 @@ public class player : MonoBehaviour
                     grabbedObj = grab[0].gameObject;
                     grabbedObj.GetComponent<object_Traverse>().enabled = false;
                     grabbedObj.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    anim.SetBool("holding", true);
                 }
                 else
                 {
@@ -117,6 +118,7 @@ public class player : MonoBehaviour
         }
         else if(grabbedObj != null)
         {
+            anim.SetBool("holding", false);
             grabbedObj.transform.parent = null;
             grabbedObj.GetComponent<Collider2D>().enabled = true;
             grabbedObj.GetComponent<object_Traverse>().enabled = true;
