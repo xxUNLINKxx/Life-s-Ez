@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Salvio/Scenes/Main/Main.unity
+- path: Assets/Boni/Gmaes/DogGame/Scenes/Doge.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

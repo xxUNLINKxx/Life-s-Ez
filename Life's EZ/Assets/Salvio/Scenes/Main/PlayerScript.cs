@@ -135,6 +135,11 @@ public class PlayerScript : MonoBehaviour
 
         if(index >= 6)
         {
+            if(gData.day==2 && gData.canBePressed() && Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("cry bitch");
+                return;
+            }
             if (gData.canBePressed() && Input.GetKeyDown(KeyCode.E))
             {                          
                 StartCoroutine(NextDay());

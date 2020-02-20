@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Barilea/Scenes/BrickOutBoi/BrickOutBoi/BrickOutBoi.unity
     guid: f0a815cc7d59c9d43a7ee13fe308b232
   - enabled: 1
+    path: Assets/Boni/Gmaes/ColorRace/Scenes/Color Racer.unity
+    guid: fd0770ac611d89f4bae3b0119915425c
+  - enabled: 1
+    path: Assets/Boni/Gmaes/DogGame/Scenes/Doge.unity
+    guid: edb22d8308e393740a2af3899fa56083
+  - enabled: 1
     path: Assets/Salvio/Scenes/HauntedRoom/room.1.unity
     guid: ca7f3e23f4f0f944583059aecc67a46d
   - enabled: 1
