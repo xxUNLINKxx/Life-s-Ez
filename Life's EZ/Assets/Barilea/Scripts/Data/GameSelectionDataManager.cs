@@ -38,6 +38,11 @@ public class GameSelectionDataManager : MonoBehaviour
             GenerateGames();
         }
     }
+
+    private void Update()
+    {
+        SaveFile();
+    }
     public void ResetFile()
     {
         string destination = Application.persistentDataPath + "/save.dat";

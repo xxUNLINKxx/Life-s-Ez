@@ -14,7 +14,7 @@ public class player : MonoBehaviour
     private GameObject grabbedObj;
     private Animator anim;
     public int area;
-    [SerializeField] private GameObject pC;
+    [SerializeField] private GameObject pC, canvas;
 
     private void Start()
     {
@@ -44,6 +44,18 @@ public class player : MonoBehaviour
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
+        }
+        if(direction() == 1)
+        {
+            Transform canva = canvas.transform;
+            Vector2 newScale = new Vector2(0.1f, 0.1f);
+            canvas.transform.localScale = newScale;
+        }
+        else
+        {
+            Transform canva = canvas.transform;
+            Vector2 newScale = new Vector2(-0.1f, 0.1f);
+            canvas.transform.localScale = newScale;
         }
 
         if (facingRight && moveInput < 0|| !facingRight && moveInput>0)

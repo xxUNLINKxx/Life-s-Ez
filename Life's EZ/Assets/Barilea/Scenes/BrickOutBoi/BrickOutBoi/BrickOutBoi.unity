@@ -3127,8 +3127,8 @@ MonoBehaviour:
   GameObjects:
   - {fileID: 842160381}
   - {fileID: 170014639}
-  Velocity: {x: 3, y: 5, z: 0}
-  PaddleSpeed: 0.1
+  Velocity: {x: 3.5, y: 6.5, z: 0}
+  PaddleSpeed: 0.13
   limit: 4.25
   brickHolder: {fileID: 564043262}
   gameHolder: {fileID: 352534679}

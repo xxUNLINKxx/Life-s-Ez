@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0f7fa6771e5734888d919d419f442b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionTime: 0.5
+  transitionTime: 1
   NextLevel: room.2
-  sceneAnim: {fileID: 0}
+  anim: {fileID: 0}
+  pressE: {fileID: 0}

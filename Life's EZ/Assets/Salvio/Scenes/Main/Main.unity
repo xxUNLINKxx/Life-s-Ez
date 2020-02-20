@@ -455,8 +455,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -615418921
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 333a3abedfc013d45a53126824960d52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -807,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 4284605107786067746, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -292.09998
+      value: -466
       objectReference: {fileID: 0}
     - target: {fileID: 4284605107868883361, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
@@ -822,7 +822,7 @@ PrefabInstance:
     - target: {fileID: 4284605107868883362, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -312.1
+      value: -486.00006
       objectReference: {fileID: 0}
     - target: {fileID: 4284605108121963134, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
@@ -872,7 +872,7 @@ PrefabInstance:
     - target: {fileID: 4284605108340552218, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -312.09998
+      value: -486.00003
       objectReference: {fileID: 0}
     - target: {fileID: 4284605108802713221, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
@@ -887,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 4284605108802713222, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -310.59998
+      value: -484.50003
       objectReference: {fileID: 0}
     - target: {fileID: 4284605108852050852, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
@@ -947,7 +947,7 @@ PrefabInstance:
     - target: {fileID: 4284605109053946263, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -312.09998
+      value: -486.00003
       objectReference: {fileID: 0}
     - target: {fileID: 4284605109364249930, guid: 566f6de1aeaf3894c95984f5d20660c6,
         type: 3}

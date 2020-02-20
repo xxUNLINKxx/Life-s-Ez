@@ -15,12 +15,6 @@ public class MenuManager : MonoBehaviour
         if (File.Exists(destination)) File.Delete(destination);
         SceneManager.LoadScene("Main"); 
     }
-    public void LoadGame()
-    {
-        string destination = Application.persistentDataPath + "/save.dat";
-        if (File.Exists(destination))
-        SceneManager.LoadScene("Main");
-    }
 
     private void Update()
     {
