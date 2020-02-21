@@ -155,6 +155,24 @@ public class PlayerScript : MonoBehaviour
         sceneTransition.StartCoroutine(sceneTransition.EnterScene());
         gData.GenerateGames();
     }
+
+    IEnumerator Menu()
+    {
+        Debug.Log("This works");
+        sceneTransition.StartCoroutine(sceneTransition.ExitScene(2f));
+        yield return new WaitForSeconds(2f);
+        sceneTransition.StartCoroutine(sceneTransition.EnterScene());
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void back2Menu()
+    {
+        if (!hasPressed)
+        {
+            hasPressed = true;
+            StartCoroutine(Menu());
+        }
+    }
 }
 
 

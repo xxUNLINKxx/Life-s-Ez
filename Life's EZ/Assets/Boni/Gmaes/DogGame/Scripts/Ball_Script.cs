@@ -49,6 +49,10 @@ public class Ball_Script : MonoBehaviour
         {
             //lmaoooo
         }
+        if (transform.localScale.x < 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
     private void OnMouseDown()
     {
@@ -63,9 +67,6 @@ public class Ball_Script : MonoBehaviour
         {
             Vector2 direction = new Vector2(dirx, diry);
             rb.AddForce(direction);
-            Debug.Log(initx);
-            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition).x);
-            Debug.Log(direction);
             flying = true;
         }
     }

@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74, y: 324.3}
+  m_AnchoredPosition: {x: -203, y: 350}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58625129
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1112,7 +1112,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3fde2b0301bc9646ac3e006be497f56, type: 3}
-  m_Color: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+  m_Color: {r: 0.33241364, g: 0.49187946, b: 0.8490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1506,6 +1506,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 559380516}
+    - target: {fileID: 1856240094906209097, guid: 90cb4b13c955e8e488fd581d69efb6ff,
+        type: 3}
+      propertyPath: miny
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1856240094906209140, guid: 90cb4b13c955e8e488fd581d69efb6ff,
         type: 3}
       propertyPath: m_Name
