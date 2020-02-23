@@ -140,5 +140,8 @@ MonoBehaviour:
   minuscale: 0.01
   minusalpha: 4
   minx: 0
-  miny: 0.4
+  miny: 0.6
   anim: {fileID: 0}
+  borks:
+  - {fileID: 8300000, guid: 508c2b8b85422ce4cae9c00c747b9bef, type: 3}
+  - {fileID: 8300000, guid: 1311efa5e4580634394b53827c2e797a, type: 3}

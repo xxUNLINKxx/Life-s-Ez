@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Ball_Script : MonoBehaviour
 {
     public float yforcemultiplier, xforcemultiplier, xconstant, xvaria, 
@@ -13,6 +13,8 @@ public class Ball_Script : MonoBehaviour
     public Animator anim;
     GameManager gm;
     SpriteRenderer sp;
+    AudioSource aSrc;
+    public AudioClip[] borks;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class Ball_Script : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("gm").GetComponent<GameManager>();
         sp.sortingOrder = 10;
         anim = GameObject.Find("body").GetComponent<Animator>();
+        aSrc = GameObject.Find("Audio Source").GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -47,7 +50,7 @@ public class Ball_Script : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //lmaoooo
+            SceneManager.LoadScene("Main");
         }
         if (transform.localScale.x < 0)
         {
@@ -76,6 +79,8 @@ public class Ball_Script : MonoBehaviour
             collision.gameObject.transform.position.y < gameObject.transform.position.y)
         {
             gm.Goal();
+            aSrc.PlayOneShot(borks[Random.Range(0, borks.Length)]);
+
         }
         if (collision.gameObject.tag == "DestroyTrig" && dedsoon == true)
         {

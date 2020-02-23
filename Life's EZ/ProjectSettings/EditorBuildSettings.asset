@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Salvio/Scenes/HauntedRoom/room.7.unity
     guid: 83f510a43438cbf42b83b8646c52b761
+  - enabled: 1
+    path: Assets/END.unity
+    guid: 3aae08e1b5002264d98c34420bf38112
   m_configObjects: {}

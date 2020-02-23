@@ -10,27 +10,28 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Color color;
     public GameObject[] buttons;
     SceneTransition sceneTransition;
+    [SerializeField] private AudioClip click;
+    public AudioSource aSrc;
 
     private void Start()
     {
         sceneTransition = GameObject.Find("sceneTransitionCanvas").GetComponent<SceneTransition>();
+        aSrc = GameObject.Find("aSrc").GetComponent<AudioSource>();
     }
     public void NewGame()
     {
         string destination = Application.persistentDataPath + "/save.dat";
         if (File.Exists(destination)) File.Delete(destination);
         StartCoroutine(NextDay());
+        aSrc.PlayOneShot(click);
     }
 
-    private void Update()
+    public void Exit()
     {
-        string destination = Application.persistentDataPath + "/save.dat";
-        if (!File.Exists(destination))
-        {
-            buttons[1].GetComponent<Image>().color = color;
-            buttons[1].transform.GetChild(0).GetComponent<Text>().color = color;
-        }
+        aSrc.PlayOneShot(click);
+        Application.Quit();
     }
+
     IEnumerator NextDay()
     {
         Debug.Log("This works");

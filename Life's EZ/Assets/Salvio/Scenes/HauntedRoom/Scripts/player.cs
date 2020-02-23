@@ -63,7 +63,7 @@ public class player : MonoBehaviour
             Flip();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (canGrab())
             {

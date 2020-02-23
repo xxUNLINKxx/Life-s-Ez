@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class SceneTransition : MonoBehaviour
 {   
-    private static SceneTransition instance; 
-    private void Awake()
+    public static SceneTransition instance;
+    void Awake()
     {
-        if(instance == null)
+        DontDestroyOnLoad(this);
+
+        if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
-            return;
         }
-        if(instance==this)
+        else
         {
-            Destroy(instance);
+            Destroy(this.gameObject);
         }
     }
-    
+
     public GameObject scenetransition;
     public IEnumerator ExitScene(float delay)
     {

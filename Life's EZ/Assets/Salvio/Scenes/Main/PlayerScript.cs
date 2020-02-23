@@ -14,6 +14,9 @@ public class PlayerScript : MonoBehaviour
     GameSelectionDataManager gData;
     SceneTransition sceneTransition;
     public GameObject menu;
+
+    public AudioSource aSrc;
+    public AudioClip click;
     private void Start()
     {
         maxIndex = movePos.Length-1;
@@ -21,6 +24,7 @@ public class PlayerScript : MonoBehaviour
         gData = GameObject.Find("Data Manager").GetComponent<GameSelectionDataManager>();
         sceneTransition = GameObject.Find("sceneTransitionCanvas").GetComponent<SceneTransition>();
         menu.SetActive(false);
+        aSrc = GameObject.Find("aSrc").GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -137,7 +141,7 @@ public class PlayerScript : MonoBehaviour
         {
             if(gData.day==2 && gData.canBePressed() && Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("cry bitch");
+                StartCoroutine(End());
                 return;
             }
             if (gData.canBePressed() && Input.GetKeyDown(KeyCode.E))
@@ -165,6 +169,15 @@ public class PlayerScript : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    IEnumerator End()
+    {
+        Debug.Log("This works");
+        sceneTransition.StartCoroutine(sceneTransition.ExitScene(2f));
+        yield return new WaitForSeconds(2f);
+        sceneTransition.StartCoroutine(sceneTransition.EnterScene());
+        SceneManager.LoadScene("END");
+    }
+
     public void back2Menu()
     {
         if (!hasPressed)
@@ -172,6 +185,11 @@ public class PlayerScript : MonoBehaviour
             hasPressed = true;
             StartCoroutine(Menu());
         }
+    }
+
+    public void Click()
+    {
+        aSrc.PlayOneShot(click);
     }
 }
 
